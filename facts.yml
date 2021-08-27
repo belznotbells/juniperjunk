@@ -5,14 +5,18 @@
 
   tasks:
 
+  - name: collect default set of facts
+    junipernetworks.junos.junos_facts:
+    register: j_facts
+
   - name: print facts to console
     debug:
-      msg: "{{ansible_facts}}"
+      msg: "{{ j_facts }}"
 
-  - name: display version
-    debug:
-      msg: "The version is: {{ ansible_net_version }}"
+  # - name: display version
+  #   debug:
+  #     msg: "The version is: {{ ansible_net_version }}"
 
-  - name: display serial number
-    debug:
-      msg: "The serial number is:{{ ansible_net_serialnum }}"
+  # - name: display serial number
+  #   debug:
+  #     msg: "The serial number is:{{ ansible_net_serialnum }}"
