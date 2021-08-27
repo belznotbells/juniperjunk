@@ -1,0 +1,9 @@
+- name: configure the login banner
+  hosts: junex01
+  junipernetworks.junos.junos_banner:
+    banner: login
+    text: |
+      this is my login banner
+      that contains a multiline
+      string
+    state: present
