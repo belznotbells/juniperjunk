@@ -1,6 +1,7 @@
 ---
 - name: Ansible Facts
   hosts: juniper
+  connection: local
   gather_facts: no
 
   tasks:
