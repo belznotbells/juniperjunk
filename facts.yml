@@ -1,6 +1,6 @@
 ---
 - name: Ansible Facts
-  hosts: junex01
+  hosts: juniper
   gather_facts: yes
 
   tasks:
