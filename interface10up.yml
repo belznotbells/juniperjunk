@@ -1,0 +1,11 @@
+---
+- name: Check GE is Up and if Not make Up 
+  hosts: juniper
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: make interface up
+      junipernetworks.junos.junos_interface:
+        name: ge-0/0/10
+        enabled: true
