@@ -1,6 +1,6 @@
 ---
 - name: "Get Junos OS configuration hierarchies"
-  hosts: junex01
+  hosts: juniper
   connection: local
   gather_facts: no
 
