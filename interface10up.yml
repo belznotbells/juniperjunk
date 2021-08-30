@@ -1,5 +1,0 @@
----
-- name: make interface up
-  junipernetworks.junos.junos_interface:
-    name: ge-0/0/10
-    enabled: true
