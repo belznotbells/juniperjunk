@@ -6,7 +6,7 @@
 
   tasks:
     - name: Get selected configuration hierarchies
-      juniper.device.config:
+      junipernetworks.junos.junos_config:
         retrieve: committed
         filter: <interfaces><interface>
                  <name>ge-1/0/10</name></interface></interfaces>
