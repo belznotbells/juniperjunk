@@ -5,11 +5,11 @@
   gather_facts: no
 
   tasks:
-    - name: "Get selected configuration hierarchies"
+    - name: Get selected configuration hierarchies
       juniper.device.config:
-        retrieve: "committed"
-        filter: "<interfaces><interface>
-                 <name>ge-1/0/10</name></interface></interfaces>"
+        retrieve: committed
+        filter: <interfaces><interface>
+                 <name>ge-1/0/10</name></interface></interfaces>
       register: response
     - name: "Print result"
       debug:
