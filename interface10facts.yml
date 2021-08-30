@@ -1,0 +1,16 @@
+---
+- name: "Get Junos OS configuration hierarchies"
+  hosts: junex01
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: "Get selected configuration hierarchies"
+      juniper.device.config:
+        retrieve: "committed"
+        filter: "<interfaces><interface>
+                 <name>ge-1/0/10</name></interface></interfaces>"
+      register: response
+    - name: "Print result"
+      debug:
+        var: response
