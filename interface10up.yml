@@ -1,11 +1,26 @@
 ---
-- name: Check GE is Up and if Not make Up 
+- name: CONFIGURE INTERFACES
   hosts: juniper
-  connection: local
   gather_facts: no
 
   tasks:
-    - name: make interface up
-      junipernetworks.junos.junos_interface:
-        name: ge-0/0/10
-        enabled: true
+  - name: GATHER CURRENT INTERFACES CONFIGURED
+    junipernetworks.junos.junos_interfaces:
+      state: gathered
+
+#  - name: CONFIGURE THE PHYSICAL INTERFACES **PREFERRED METHOD USING HOST_VARS**
+#    junipernetworks.junos.junos_interfaces:
+#      config: "{{ interfaces }}"
+#      state: replaced
+
+  # - name: CONFIGURE THE PHYSICAL INTERFACES **EXAMPLE FROM DOCS**
+  #   junipernetworks.junos.junos_interfaces:
+  #     config:
+  #     - name: ge-0/0/1
+  #       description: Configured by Ansible
+  #       enabled: true
+  #       mtu: 1800
+  #     - name: ge-0/0/2
+  #       description: Configured by Ansible
+  #       enabled: false
+  #     state: replaced%
